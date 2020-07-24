@@ -152,7 +152,7 @@ esac
 
 dnl Checks for pthread
 AX_PTHREAD([LIBS="$PTHREAD_LIBS $LIBS"
-            CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
+            CFLAGS="$CFLAGS $PTHREAD_CFLAGS -Wall -O3 -pipe -Wno-format-truncation -Wno-error=format-overflow -Wno-error=pointer-arith -Wno-error=stringop-truncation -Wno-error=sizeof-pointer-memaccess"
             CC="$PTHREAD_CC"], AC_MSG_ERROR(Can not find pthreads.  This is required.))
 
 dnl Checks for stack protector
